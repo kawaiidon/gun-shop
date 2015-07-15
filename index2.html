@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="jquery.custom-scrollbar.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="jquery.custom-scrollbar.js"></script>
+
+
+        <script>
+            $(function() {
+			    $(".menu_ul_div").each(function(){
+				    $(this).css("min-width", 100*($(this).find("ul").length));
+				  
+			    });
+				$(".search_type").each(function(){
+				    $(this).css("height", 18*($(this).find("option").length));
+					 h = $(this).height();
+					$(this).find("select").height(h);
+			    });
+				
+});
+            
+        </script>
+        <script>
+$(function(){
+   $(".search_menu_main_title").click(function(event){
+		
+		event.preventDefault();
+		$(".clicked").parent().find(".search_menu_ul_div").hide();
+		$(".clicked").removeClass("clicked");
+		$(this).addClass("clicked");
+     // $(this).addClass("search_menu_main_title_hit");
+      $(this).parent().find(".search_menu_ul_div").show();
+      $(this).parent().find(".search_menu_ul_div").customScrollbar({
+            skin: "default-skin", 
+			hScroll: false,
+			updateOnWindowResize: true
+      });
+	  
+   });
+	$(".wrapper").click(function(event){
+		
+			if (!$(event.target).hasClass("clicked")){
+			if( $(event.target).hasClass("scrollable") || $(event.target).hasClass("search_menu_ul_left") || event.target.nodeName == "OPTION" )
+				{
+				   
+				}
+			else {
+				$(".clicked").parent().find(".search_menu_ul_div").hide();
+				$(".clicked").removeClass("clicked");
+			}
+		
+	}
+	
+		
+	});
+$("#right_item_sidebar").customScrollbar({
+            skin: "default-skin", 
+   hScroll: false,
+   updateOnWindowResize: true
+      });
+});
+       </script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+            <div id="header_top">
+                <div id="top_main">
+                    <span class="logo_arms">POSEIDON ARMS</span><span class="top_contacts">Tel.: 1-800-917-7137</span><span class="top_contacts">Skype: poseidonarms14</span><a class="menu_top" href="index.html">How to order</a><a class="menu_top" href="index.html">Payment</a><a class="menu_top" href="index.html">Shipping</a><a class="menu_top" href="index.html">Contact</a><a class="menu_top" href="index.html">Dealer to Dealer</a><span class="top_login_button">Login</span><a class="top_cart" href="index.html"><img  src="img/icon_8187.png"  alt="Cart"></a><div id="cart_num"><span class="top_cart_count">2</span></div>
+                </div>
+                
+                  
+                
+                
+            </div>
+        
+        </header><!-- .header-->
+
+	<div class="middle">
+		<div id="top_content_menu">
+                    <div id="top_logo_arms"></div>
+                    <div id="search">
+
+                        <input type="search" placeholder="Search..." name="go" />
+                                           <ul id="search_menu">
+											
+    <li><a class="search_menu_main_title" href="#">Type   </a>
+       <div class="search_menu_ul_div">
+		 <div class="search_type">
+				<select class="search_menu_ul_left" multiple >
+		  
+					<option >9mm</option>
+					<option >devyatos</option>
+					<option>California guns1</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns1</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns2</option>
+				</select>
+		 </div>
+       </div>     
+    </li>
+    <li><a class="search_menu_main_title" href="#">Manufacture   </a>
+       <div class="search_menu_ul_div"> 
+           <ul>
+				<div class="search_type">
+					<select class="search_menu_ul_left" multiple >
+		  
+						<option >California guns</option>
+						<option >Left hand guns</option>
+						<option >Scout rifle</option>
+					</select>
+            			
+				</div>
+        </ul>
+       </div>
+    </li>
+     <li><span class="search_ship_text" href="#">Free shipping</span>
+
+    </li>       
+
+
+</ul>
+                        <input id="demo_box_1" class="css-checkbox" type="checkbox" />
+                        <label for="demo_box_1" name="demo_lbl_1" class="css-label"></label>
+                        
+                        <input type="button" value="Search" />
+                        
+                        
+                    </div>
+                   
+                    <ul id="menu">
+
+    <li><a class="menu_main_title" href="#">HANDGUNS</a>
+        <div class="menu_ul_div">
+			<ul class="menu_ul_left">
+				<li><a class="menu_slave_title" href="#">New guns 2014</a></li>
+				<li><a class="menu_slave_title" href="#">Small carry gun</a></li>
+				<li><a class="menu_slave_title" href="#">Shotguns</a></li>
+				<li><a class="menu_slave_title" href="#">Muzzleloaders</a></li>
+				<li><a class="menu_slave_title" href="#">California guns</a></li>
+				<li><a class="menu_slave_title" href="#">Left hand guns</a></li>
+				<li><a class="menu_slave_title" href="#">Scout rifle</a></li>
+			</ul>
+         <ul class="menu_ul_right">
+            <li><a class="menu_slave_title" href="#">Airguns</a></li>
+            <li><a class="menu_slave_title" href="#">Youth guns</a></li>
+            <li><a class="menu_slave_title" href="#">Surplus firearms</a></li>
+            <li><a class="menu_slave_title" href="#">Exlusive guns</a></li>
+
+        </ul>
+       </div>     
+    </li>
+    <li><a class="menu_main_title" href="#">RIFILES</a>
+       <div class="menu_ul_div"> <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li>
+     <li><a class="menu_main_title" href="#">SHOTGUNS</a>
+       <div class="menu_ul_div"> <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul>
+           </div>
+    </li>       
+     <li><a class="menu_main_title" href="#">SPECIAL WEAPONS</a>
+        <div class="menu_ul_div"><ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li> 
+    <li><a class="menu_main_title" href="#">KNIFES</a>
+        <div class="menu_ul_div"><ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li>  
+    <li><a class="menu_main_title" href="#">AMMO</a>
+      <div class="menu_ul_div">  <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+          </ul></div>
+    </li>  
+    
+    <span class="sale_icon">SALE</span>
+</ul>
+                   
+                    
+                </div> 
+
+
+		<div class="container">
+			<main class="content">
+                            <span class="navigation_title">HOME></span> <span class="navigation_title">FIREARMS></span> <span class="navigation_title_on">M&P</span>
+                            <div id="item">
+                                <span class="item_title">Smith & Wesson M&P 15 Sport Custom Package W/ TRUGLO Reflex Sight, Hard Case & 4 Mags</span> 
+                                <span class="item_id">Item # 022188145663</span>
+                                <span class="item_id_1">More items from:</span><a class="item_link" href="#">Smith & Wesson</a>
+                                <div id="item_photo_all">
+                                    <div class="item_photo_big"><img class="big_photo_img" src="img/big_img.gif"></div>
+                                    <div class="item_photo_little"><img class="little_photo_img" src="img/little_img.gif"></div>
+                                    <div class="item_photo_little"><img class="little_photo_img" src="img/little_img.gif"></div>
+                                    <div class="item_photo_little"><img class="little_photo_img" src="img/little_img.gif"></div>
+                                    <div class="item_photo_little"><img class="little_photo_img" src="img/little_img.gif"></div>
+                                    <div class="item_photo_little"><img class="little_photo_img" src="img/little_img.gif"></div>
+
+                                </div>
+                                <div id="item_main_menu">
+                                 <span class="item_navi_span_on">DETAILS</span>  <span class="item_navi_span_off">SPECIFICATIONS</span> <span class="item_navi_span_off">REVIEWS</span><span class="item_navi_span_off">SHIPPING</span>
+                                  
+                                </div>
+                                <div id="item_text">
+                                    <span class="item_discript_text">
+                                        
+                                      <p><b>Smith & Wesson    Made in the USA</b></p>
+<p><b>Model M&P 15 Sport AR15 5.56mm 16" Barrel, Melonite Finish, Adjustable Sights, 6-Position Collapsible Stock, Black, 30 Round Magazine</b></p> 
+<span class="item_discript_text_main">
+<p>Detachable magazine. Adjustable A2 Post front sight with adjustable dual aperture rear sight. Sixteen inch Melonite coated barrel. Single stage trigger. Hard coat black anodized receiver finish. Chrome lined gas key and bolt carrier. High-temp polymer handguard.</p>
+
+<p><i>Six-position telescopic stock. With flash suppressor compensator. Overall length of gun 32 inches collapsed and 35 inches extended.</i></p>
+
+<p>The new M&P15 SPORT rifle joins Smith & Wesson's popular line of M&P15 semi-automatic tactical rifles. With its ready-to-go design, the M&P 15 SPORT benefits from accurate rifling, a durable Melonite coated barrel, adjustable sights and a single stage trigger.</p>
+
+<p>Versatile, modular and an exceptional value, the M&P15 SPORT is a perfect choice for the tactical rifle enthusiast. </p>  
+</span>                                        
+                                        
+                                        
+                                    </span>
+                                    <object width="545" height="300"><param name="movie" value="//www.youtube.com/v/XrWFbacZB30?version=3&amp;hl=ru_RU"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/XrWFbacZB30?version=3&amp;hl=ru_RU" type="application/x-shockwave-flash" width="545" height="300" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+                                    
+                                    
+                                </div>
+                                
+                                
+                            </div>
+			</main><!-- .content -->
+		</div><!-- .container-->
+
+		<aside class="left-sidebar">
+		</aside><!-- .left-sidebar -->
+
+		<aside class="right-sidebar">
+                    <div id="right_item_discr">
+                        <span class="r_item_discr_title">In Stock Now!</span>
+                        <span class="status_icon">FREE SHIPPING</span>
+                        <span class="shipment_date">Ships On Or Before: 6/18/2014</span>
+                        <span class="shipment_options">Shipping options</span>
+                        <span class="price">Price:</span><span class="price_count">$399.00</span><span class="price_count_sail">$500.00</span>
+                        <span class="add_cart">Add to cart</span>
+                        <div class="item_soc_but">
+                                                <a class="item_soc_img" href="index.html"><img  src="img/facebook.gif"  alt="facebook"></a>
+                                                <a class="item_soc_img" href="index.html"><img  src="img/twitter.gif"  alt="twitter"></a>
+                            
+                        </div>
+                        
+                    </div>
+                    <span class="right_title">YOU MAY ALSO LIKE:</span>
+                    <div id="right_item_sidebar">
+                    <div class="right_item_more">
+                        <span class="like_item_title">Smith & Wesson M&P 15 Sport Custom Package W/ TRUGLO Reflex Sight, Hard Case & 4 Mags</span>
+                        <span class="like_item_inv">Item # SW-SPORT-PKG</span>
+                        <img class="like_weapon_img" src="img/weapon1.gif">
+                        <span class="status_icon">FREE SHIPPING</span>
+                        <span class="count_stat">Low stock</span><span class="price_count_main">$574.99</span>
+                        
+                    </div>
+                    <div class="right_item_more">
+                        <span class="like_item_title">STS I15 Tribal Skull Stripped Lower - Minor Blemish, Ships For $5 Each</span>
+                        <span class="like_item_inv">Item # STS-I15-L-BLEM</span>
+                        <img class="like_weapon_img" src="img/weapon2.gif">
+                        <span class="status_icon">NEW</span>
+                        <span class="count_stat">Low stock</span><span class="price_count_like">$399.00</span><span class="price_count_like_sail">$500.00</span>                     
+                        
+                        
+                    </div>
+                    <div class="right_item_more">
+                        <span class="like_item_title">Smith & Wesson M&P 15 Sport Custom Package W/ TRUGLO Reflex Sight, Hard Case & 4 Mags</span>
+                        <span class="like_item_inv">Item # SW-SPORT-PKG</span>
+                        <img class="like_weapon_img" src="img/weapon1.gif">
+                        <span class="status_icon">FREE SHIPPING</span>
+                        <span class="count_stat">Low stock</span><span class="price_count_main">$574.99</span>
+                        
+                        
+                    </div>
+                     
+                    </div>
+                    <span class="right_title right_title2">RECENTLY VIEWID:</span>   
+                    
+                    <div class="ricent_item">
+                        <span class="like_item_title">STS I15 Tribal Skull Stripped Lower - Minor Blemish, Ships For $5 Each</span>
+                        <span class="like_item_inv">Item # STS-I15-L-BLEM</span>
+                        <img class="like_weapon_img" src="img/weapon3.gif">
+                        <span class="status_icon">FREE SHIPPING</span>
+                        <span class="count_stat">Low stock</span><span class="price_count_main">$574.99</span>
+                        
+                    </div>
+		</aside><!-- .right-sidebar -->
+
+	</div>
+
+	
+
+</div><!-- .wrapper -->
+<footer class="footer">
+            <div id="footer_content">
+            <div id="content_left"><div id="footer_bg_left"></div></div>
+            <div id="content_left_cen"><span class="footer_content_text">Poseidon Arms is the gun shop for all your shooting needs. We offer a wide selection of firearms, including: handguns, shotguns, rifles, ammunition, rifle scopes and optics, as well as collectible machine guns and other NFA/Class 3 guns. Shop online through our 256-bit Secure Sockets Layer encrypted online gun store 24 hours a day!</span></div>
+            <div id="content_center"> 
+                <div class="icon_bottom">
+                    <span class="footer_content_text">Shipping:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/usp.png"  alt="usp"></a>
+                    <a  href="index.html"><img  src="img/ups.png"  alt="ups"></a>
+                    <a  href="index.html"><img  src="img/fedex.png"  alt="fedex"></a>
+                    </div>
+                </div>
+                <div class="icon_bottom">
+                    <span class="footer_content_text">We accept:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/visa.png"  alt="visa"></a>
+                    <a  href="index.html"><img  src="img/amex.png"  alt="amex"></a>
+                    <a  href="index.html"><img  src="img/discover.png"  alt="discover"></a>
+                    </div>
+                </div>
+                <div class="icon_bottom">
+                    <span class="footer_content_text">Follow us:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/facebook.png"  alt="facebook"></a>
+                    <a  href="index.html"><img  src="img/twitter.png"  alt="twitter"></a>
+                    <a  href="index.html"><img  src="img/youtube.png"  alt="youtube"></a>
+                    </div>
+                </div>
+            
+            </div>
+            <div id="content_right_cen">  
+                <a  href="index.html">How to order</a>  
+                <a  href="index.html">Payment</a>
+                <a  href="index.html">Shipping</a>
+                <a  href="index.html">Contact</a>
+                <a  href="index.html">My account</a>  
+                <a  href="index.html">Returns</a>
+                <a  href="index.html">Lifetime warranty</a>
+                <a  href="index.html">Privacy</a>
+            </div>
+            
+            <div id="content_right">
+                <a  href="index.html">Terms of service</a>  
+                <a  href="index.html">Stores</a>
+                <a  href="index.html">FFL</a>
+                <a  href="index.html">Affiliate</a>
+                <a  href="index.html">Site map</a>
+                <a  href="index.html">FAQ</a>
+            </div>
+            
+        </div>
+    <div id="footer_bottom">
+     <div id="footer_bottom_content"> <span class="footer_span_copyright"> 013, Poseidon Arms, All Rights Reserved. Poseidon Arms ®  name and logo is a registered trademark of Poseidon Arms. </span><span class="footer_span_copyright_right">Development by Webant 2014</span></div>
+       
+     
+    </div>
+	</footer><!-- .footer -->
+<div class="search_menu_background"></div>
+</body>
+</html>

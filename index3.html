@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="jquery.custom-scrollbar.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="jquery.custom-scrollbar.js"></script>
+        <!-- the mousewheel plugin - optional to provide mousewheel support -->
+		<script type="text/javascript" src="script/jquery.mousewheel.js"></script>
+
+		<!-- the jScrollPane script -->
+		<script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" src="script/multyselect/hidden_jquery.multiselect-1.1.0.js"></script>
+		<script type="text/javascript" src="script/multyselect/jquery.multiselect-1.1.0.js"></script>
+		<script type="text/javascript" src="script/jquery.customSelect.min.js"></script>
+		<script type="text/javascript" src="script/chosen.jquery.min.js"></script>
+		<link type="text/css" href="script/chosen.min.css" rel="stylesheet" media="all" />
+
+        <script>
+            (function( $ ){
+
+$(function() {
+
+  $('.rf').each(function(){
+    // Объявляем переменные (форма и кнопка отправки)
+	var form = $(this),
+        btn = form.find('.btn_submit');
+
+    // Добавляем каждому проверяемому полю, указание что поле пустое
+	form.find('.rfield').addClass('empty_field');
+
+    // Функция проверки полей формы
+    function checkInput(){
+      form.find('.rfield').each(function(){
+        if($(this).val() != ''){
+          // Если поле не пустое удаляем класс-указание
+		$(this).removeClass('empty_field');
+        } else {
+          // Если поле пустое добавляем класс-указание
+		$(this).addClass('empty_field');
+        }
+      });
+    }
+
+    // Функция подсветки незаполненных полей
+    function lightEmpty(){
+      form.find('.empty_field').addClass("input_error");
+      
+
+
+    }
+
+    // Проверка в режиме реального времени
+    setInterval(function(){
+      // Запускаем функцию проверки полей на заполненность
+	  checkInput();
+      // Считаем к-во незаполненных полей
+      var sizeEmpty = form.find('.empty_field').size();
+      // Вешаем условие-тригер на кнопку отправки формы
+      if(sizeEmpty > 0){
+        if(btn.hasClass('disabled')){
+          return false
+        } else {
+          btn.addClass('disabled')
+        }
+      } else {
+        btn.removeClass('disabled')
+      }
+    },500);
+
+    // Событие клика по кнопке отправить
+    btn.click(function(){
+      if($(this).hasClass('disabled')){
+        // подсвечиваем незаполненные поля и форму не отправляем, если есть незаполненные поля
+		lightEmpty();
+        return false
+      } else {
+        // Все хорошо, все заполнено, отправляем форму
+        form.submit();
+      }
+    });
+  });
+});
+
+})( jQuery );
+    </script>
+        <script>
+            $(function() {
+			    $(".menu_ul_div").each(function(){
+				    $(this).css("min-width", 100*($(this).find("ul").length));
+				  
+			    });
+				$(".search_type").each(function(){
+				    $(this).css("height", 18*($(this).find("option").length));
+					 h = $(this).height();
+					$(this).find("select").height(h);
+			    });
+				
+});
+            
+        </script>
+        
+        <script>
+$(function(){
+   $(".search_menu_main_title").click(function(event){
+		
+		event.preventDefault();
+		$(".clicked").parent().find(".search_menu_ul_div").hide();
+		$(".clicked").removeClass("clicked");
+		$(this).addClass("clicked");
+     // $(this).addClass("search_menu_main_title_hit");
+      $(this).parent().find(".search_menu_ul_div").show();
+      $(this).parent().find(".search_menu_ul_div").customScrollbar({
+            skin: "default-skin", 
+			hScroll: false,
+			updateOnWindowResize: true
+      });
+	  
+   });
+	$(".wrapper").click(function(event){
+		
+			if (!$(event.target).hasClass("clicked")){
+			if( $(event.target).hasClass("scrollable") || $(event.target).hasClass("search_menu_ul_left") || event.target.nodeName == "OPTION" )
+				{
+				   
+				}
+			else {
+				$(".clicked").parent().find(".search_menu_ul_div").hide();
+				$(".clicked").removeClass("clicked");
+			}
+		
+	}
+	
+		
+	});
+});
+
+       </script>
+       <script>
+            $(function() {
+		$(".reg_select").chosen({disable_search_threshold: 25});
+});
+            
+        </script>      
+       
+         <script>
+             $(function() {
+$(".reg_sel").find(".chosen-results").customScrollbar({
+            skin: "default-skin", 
+   hScroll: false,
+   updateOnWindowResize: true
+      });
+    });        
+        </script>         
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+            <div id="header_top">
+                <div id="top_main">
+                    <span class="logo_arms">POSEIDON ARMS</span><span class="top_contacts">Tel.: 1-800-917-7137</span><span class="top_contacts">Skype: poseidonarms14</span><a class="menu_top" href="index.html">How to order</a><a class="menu_top" href="index.html">Payment</a><a class="menu_top" href="index.html">Shipping</a><a class="menu_top" href="index.html">Contact</a><a class="menu_top" href="index.html">Dealer to Dealer</a><span class="top_login_button">Login</span><a class="top_cart" href="index.html"><img  src="img/icon_8187.png"  alt="Cart"></a><span class="top_cart_count">2</span>
+                </div>
+                
+                  
+                
+                
+            </div>
+        
+        </header><!-- .header-->
+
+	<div class="middle">
+		<div id="top_content_menu">
+                    <div id="top_logo_arms"></div>
+                    <div id="search">
+
+                        <input type="search" placeholder="Search..." name="go" />
+                                           <ul id="search_menu">
+											
+    <li><a class="search_menu_main_title" href="#">Type   </a>
+       <div class="search_menu_ul_div">
+		 <div class="search_type">
+				<select class="search_menu_ul_left" multiple >
+		  
+					<option >9mm</option>
+					<option >devyatos</option>
+					<option>California guns1</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns1</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns</option>
+					<option >California guns2</option>
+				</select>
+		 </div>
+       </div>     
+    </li>
+    <li><a class="search_menu_main_title" href="#">Manufacture   </a>
+       <div class="search_menu_ul_div"> 
+           <ul>
+				<div class="search_type">
+					<select class="search_menu_ul_left" multiple >
+		  
+						<option >California guns</option>
+						<option >Left hand guns</option>
+						<option >Scout rifle</option>
+					</select>
+            			
+				</div>
+        </ul>
+       </div>
+    </li>
+     <li><span class="search_ship_text" href="#">Free shipping</span>
+
+    </li>       
+
+
+</ul>
+                        <input id="demo_box_1" class="css-checkbox" type="checkbox" />
+                        <label for="demo_box_1" name="demo_lbl_1" class="css-label"></label>
+                        
+                        <input type="button" value="Search" />
+                        
+                        
+                    </div>
+                   
+                    <ul id="menu">
+
+    <li><a class="menu_main_title" href="#">HANDGUNS</a>
+        <div class="menu_ul_div">
+			<ul class="menu_ul_left">
+				<li><a class="menu_slave_title" href="#">New guns 2014</a></li>
+				<li><a class="menu_slave_title" href="#">Small carry gun</a></li>
+				<li><a class="menu_slave_title" href="#">Shotguns</a></li>
+				<li><a class="menu_slave_title" href="#">Muzzleloaders</a></li>
+				<li><a class="menu_slave_title" href="#">California guns</a></li>
+				<li><a class="menu_slave_title" href="#">Left hand guns</a></li>
+				<li><a class="menu_slave_title" href="#">Scout rifle</a></li>
+			</ul>
+         <ul class="menu_ul_right">
+            <li><a class="menu_slave_title" href="#">Airguns</a></li>
+            <li><a class="menu_slave_title" href="#">Youth guns</a></li>
+            <li><a class="menu_slave_title" href="#">Surplus firearms</a></li>
+            <li><a class="menu_slave_title" href="#">Exlusive guns</a></li>
+
+        </ul>
+       </div>     
+    </li>
+    <li><a class="menu_main_title" href="#">RIFILES</a>
+       <div class="menu_ul_div"> <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li>
+     <li><a class="menu_main_title" href="#">SHOTGUNS</a>
+       <div class="menu_ul_div"> <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul>
+           </div>
+    </li>       
+     <li><a class="menu_main_title" href="#">SPECIAL WEAPONS</a>
+        <div class="menu_ul_div"><ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li> 
+    <li><a class="menu_main_title" href="#">KNIFES</a>
+        <div class="menu_ul_div"><ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+        </ul></div>
+    </li>  
+    <li><a class="menu_main_title" href="#">AMMO</a>
+      <div class="menu_ul_div">  <ul>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+            <li><a class="menu_slave_title" href="#">HANDGUNS</a></li>
+          </ul></div>
+    </li>  
+</ul>
+                   
+                    
+                </div> 
+
+
+		<div class="container">
+                    <main class="content">
+ 
+                             <span class="navigation_title">HOME></span> <span class="navigation_title_on">FFL REGISTER</span> 
+                             <span class="denotes">*Denotes required</span>
+  
+<div class="form_box">
+    
+  <form action="#" method="post" class="rf reg_sel">
+      <div id="form_left">
+    <label for="License_Name">*License Name:</label>
+    <input type="text" class="rfield" id="License_Name" />
+
+    <label for="Email">*Email</label>
+    <input type="text" class="rfield" id="Email" />
+
+    <label for="Physical_Address">*Physical Address:</label>
+    <input type="text" class="rfield" id="Physical_Address" />
+
+    <label for="user_work">*Physical State/Province:</label>
+   
+
+    <select class="rfield reg_select" id="Physical_State" size="1">
+<option selected="selected"></option>
+<option >One</option>
+<option >Two</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >OneOneOneOneOne</option>
+<option >OneOne</option>
+<option >OneOneOne</option>
+
+    </select>
+
+    <label for="Mailing_Zip">*Mailing Zip/Postal Code:</label>
+    <input type="text" class="rfield" id="Mailing_Zip" />
+
+    <label for="Phone">*Phone:</label>
+    <input type="text" class="rfield" id="Phone" />
+
+    <label for="transfer_fee">What is your transfer fee?</label>
+    <input type="text" id="transfer_fee" />
+    
+    </div>
+      
+    <div id="form_right">
+    <label for="Business_Name">Business Name:</label>
+    <input type="text"  id="Business_Name" />
+
+    <label for="Re_Type_Email">*Re-Type Email:</label>
+    <input type="text" class="rfield" id="Re_Type_Email" />
+
+    <label for="Physical_City">*Physical City:</label>
+    <input type="text" class="rfield" id="Physical_City" />
+
+
+    <label for="Physical_Zip">*Physical Zip/Postal Code:</label>
+        <select class="rfield reg_select" id="Physical_Zip"  >
+<option >`12345</option>
+<option selected="selected" value="second"></option>
+<option >One</option>
+<option >Two</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >OneOneOneOneOne</option>
+<option >OneOne</option>
+<option >OneOneOne</option>
+<option >One</option>
+<option >Two</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >One</option>
+<option >OneOneOneOneOne</option>
+<option >OneOne</option>
+<option >OneOneOne</option>
+    </select>
+ 
+    <label for="Mailing_Address">*Mailing Address:</label>
+    <input type="text" class="rfield" id="Mailing_Address" />
+
+    <label for="Mailing_Statee">*Mailing State/Province:</label>
+    
+   <input type="text" class="rfield" id="Mailing_Statee" />
+    
+    <label for="Area_Code">*Area Code</label>
+    <input type="text" class="rfield" id="Area_Code" />
+    
+    <label for="Fax">*Fax</label>
+    <input type="text" class="rfield" id="Fax" />    
+    
+    <input type="submit" class="btn_submit disabled" value="SUBMIT" />
+    </div>
+    <div class="spam">
+<span class="spam_text"><p>This step provides added security.</p>
+Type the text without spaces from the image below
+into the box to the right. It is not case sensitive.
+</span>
+        <img  src="img/recaptcha.gif" style="margin-top: 15px;" >
+<div class="spam_main">
+
+<input type="text"  class="captcha" />
+<a class="spam_a" href="#">What is this?</a>                          
+     </div> </div>
+    
+
+  </form>
+
+
+</div>
+                        </main>
+                    </div>
+                    
+                     
+                    
+		</div><!-- .container-->
+
+		
+
+	</div>
+
+	
+
+</div><!-- .wrapper -->
+<footer class="footer">
+            <div id="footer_content">
+            <div id="content_left"><div id="footer_bg_left"></div></div>
+            <div id="content_left_cen"><span class="footer_content_text">Poseidon Arms is the gun shop for all your shooting needs. We offer a wide selection of firearms, including: handguns, shotguns, rifles, ammunition, rifle scopes and optics, as well as collectible machine guns and other NFA/Class 3 guns. Shop online through our 256-bit Secure Sockets Layer encrypted online gun store 24 hours a day!</span></div>
+            <div id="content_center"> 
+                <div class="icon_bottom">
+                    <span class="footer_content_text">Shipping:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/usp.png"  alt="usp"></a>
+                    <a  href="index.html"><img  src="img/ups.png"  alt="ups"></a>
+                    <a  href="index.html"><img  src="img/fedex.png"  alt="fedex"></a>
+                    </div>
+                </div>
+                <div class="icon_bottom">
+                    <span class="footer_content_text">We accept:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/visa.png"  alt="visa"></a>
+                    <a  href="index.html"><img  src="img/amex.png"  alt="amex"></a>
+                    <a  href="index.html"><img  src="img/discover.png"  alt="discover"></a>
+                    </div>
+                </div>
+                <div class="icon_bottom">
+                    <span class="footer_content_text">Follow us:</span> 
+                    <div>
+                    <a  href="index.html"><img  src="img/facebook.png"  alt="facebook"></a>
+                    <a  href="index.html"><img  src="img/twitter.png"  alt="twitter"></a>
+                    <a  href="index.html"><img  src="img/youtube.png"  alt="youtube"></a>
+                    </div>
+                </div>
+            
+            </div>
+            <div id="content_right_cen">  
+                <a  href="index.html">How to order</a>  
+                <a  href="index.html">Payment</a>
+                <a  href="index.html">Shipping</a>
+                <a  href="index.html">Contact</a>
+                <a  href="index.html">My account</a>  
+                <a  href="index.html">Returns</a>
+                <a  href="index.html">Lifetime warranty</a>
+                <a  href="index.html">Privacy</a>
+            </div>
+            
+            <div id="content_right">
+                <a  href="index.html">Terms of service</a>  
+                <a  href="index.html">Stores</a>
+                <a  href="index.html">FFL</a>
+                <a  href="index.html">Affiliate</a>
+                <a  href="index.html">Site map</a>
+                <a  href="index.html">FAQ</a>
+            </div>
+            
+        </div>
+    <div id="footer_bottom">
+     <div id="footer_bottom_content"> <span class="footer_span_copyright"> 013, Poseidon Arms, All Rights Reserved. Poseidon Arms ®  name and logo is a registered trademark of Poseidon Arms. </span><span class="footer_span_copyright_right">Development by Webant 2014</span></div>
+       
+     
+    </div>
+	</footer><!-- .footer -->
+<div class="search_menu_background"></div>
+</body>
+</html>
